@@ -13,17 +13,17 @@ const resend = new Resend(
 )
 
 export const sendVerificationEmail = async (email, verificationToken) => {
-  const recipient = [{ email }];
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
-      to: [recipient],
+      from: 'WhetSli <onboarding@whetsli.com>',
+      to: [email],
       subject: 'Verifica Tu Correo',
-      html: VERIFICATION_EMAIL_TEMPLATE.replace("{verificationCode}", verificationToken),
+      react: VERIFICATION_EMAIL_TEMPLATE.replace("{verificationCode}", verificationToken),
     });
 
     console.log("Email sent successfully", data);
+    console.log(error)
   } catch (error) {
     console.error(`Error sending verification`, error);
 
@@ -32,12 +32,11 @@ export const sendVerificationEmail = async (email, verificationToken) => {
 };
 
 export const sendWelcomeEmail = async (email, name) => {
-  const recipient = [{ email }];
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
-      to: [recipient],
+      from: 'WhetSli <onboarding@resend.dev>',
+      to: [email],
       subject: 'Bienvenido a WhetSli',
       html: "<h1>Bienvenido a WhetSli</h1>",
     });
@@ -51,12 +50,11 @@ export const sendWelcomeEmail = async (email, name) => {
 };
 
 export const sendPasswordResetEmail = async (email, resetURL) => {
-  const recipient = [{ email }];
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
-      to: [recipient],
+      from: 'WhetSli <onboarding@resend.dev>',
+      to: [email],
       subject: 'Restablece Tu Contraseña',
       html: PASSWORD_RESET_REQUEST_TEMPLATE.replace("{resetURL}", resetURL),
     });
@@ -68,12 +66,11 @@ export const sendPasswordResetEmail = async (email, resetURL) => {
 };
 
 export const sendResetSuccessEmail = async (email) => {
-  const recipient = [{ email }];
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
-      to: [recipient],
+      from: 'WhetSli <onboarding@resend.dev>',
+      to: [email],
       subject: 'Contraseña Restablecida Exitosamente',
       html: PASSWORD_RESET_SUCCESS_TEMPLATE,
     });

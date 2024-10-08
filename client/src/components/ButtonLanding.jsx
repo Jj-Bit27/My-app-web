@@ -11,7 +11,7 @@ function ButtonLanding() {
         Iniciar sesión
       </Link>
       <Link
-        to="/auth/register"
+        to="/auth/signup"
         className="bg-stone-800 p-4 m-5 rounded-br-lg rounded-tl-lg text-xl hover:bg-emerald-600 cursor-pointer transition-all duration-300 ease-linear
         dark:bg-slate-300 dark:text-black dark:hover:bg-emerald-600 dark:hover:text-white dark:transition-all dark:duration-300"
       >

@@ -20,7 +20,6 @@ export const signup = async (req, res) => {
     }
 
     const userAlreadyExists = await User.findOne({ email });
-    console.log("userAlreadyExists", userAlreadyExists);
 
     if (userAlreadyExists) {
       return res.status(400).json({ success: false, message: "La cuenta ya ha sido registrada" });

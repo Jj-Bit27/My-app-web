@@ -17,7 +17,7 @@ function Register() {
 
     try {
       await signup(email, password, name);
-      navigate("/verify-email");
+      navigate("/auth/verify-email");
     } catch (error) {
       console.log(error);
     }
